@@ -26,8 +26,13 @@ public class SpringBootSeedApplication {
 	@Value("${file.out.path}")
 	private String basePath;
 
+	/**
+	 *
+	 * @param file 将要处理的ppt
+	 * @return
+	 */
 	@PostMapping("test")
-	public String test(@RequestParam("file") MultipartFile file,MultipartHttpServletRequest request) {
+	public String test(@RequestParam("file") MultipartFile file) {
 		try{
 			String baseFileName = file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf("."));
 			PPTUtil.split(file.getInputStream(),basePath,baseFileName);
