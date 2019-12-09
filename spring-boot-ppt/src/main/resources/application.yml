@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+
+file:
+  out:
+    path: C:\Users\futong.liu\Desktop\tmp\
